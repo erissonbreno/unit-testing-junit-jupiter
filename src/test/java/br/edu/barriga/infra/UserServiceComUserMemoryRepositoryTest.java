@@ -8,6 +8,7 @@ import org.junit.jupiter.api.*;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+@Tag("Infra")
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class UserServiceComUserMemoryRepositoryTest {
 

@@ -1,6 +1,7 @@
 package br.edu.barriga.domain;
 
 import br.edu.barriga.domain.exceptions.ValidationException;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -12,6 +13,7 @@ import static br.edu.barriga.domain.builders.ContaBuilder.umaConta;
 import static br.edu.barriga.domain.builders.UsuarioBuilder.umUsuario;
 import static org.junit.jupiter.api.Assertions.*;
 
+@Tag("Dominio") @Tag("Conta")
 public class ContaTest {
 
     private static Stream<Arguments> dataProvider() {

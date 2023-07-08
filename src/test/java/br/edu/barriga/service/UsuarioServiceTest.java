@@ -4,6 +4,7 @@ import br.edu.barriga.domain.Usuario;
 import br.edu.barriga.domain.exceptions.ValidationException;
 import br.edu.barriga.infra.UsuarioDummyRepository;
 import br.edu.barriga.service.repository.UsuarioRepository;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -16,6 +17,7 @@ import static br.edu.barriga.domain.builders.UsuarioBuilder.umUsuario;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
+@Tag("Service") @Tag("Usuario")
 @ExtendWith(MockitoExtension.class)
 public class UsuarioServiceTest {
 

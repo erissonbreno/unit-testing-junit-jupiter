@@ -4,6 +4,7 @@ import br.edu.barriga.domain.Conta;
 import br.edu.barriga.domain.exceptions.ValidationException;
 import br.edu.barriga.service.external.ContaEvent;
 import br.edu.barriga.service.repository.ContaRepository;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -18,6 +19,7 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.when;
 
+@Tag("Service") @Tag("Conta")
 @ExtendWith(MockitoExtension.class)
 public class ContaServiceTest {
 
