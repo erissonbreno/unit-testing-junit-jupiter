@@ -1,19 +1,15 @@
 package br.edu.barriga.service;
 
 import br.edu.barriga.domain.Conta;
-import br.edu.barriga.domain.builders.ContaBuilder;
 import br.edu.barriga.domain.exceptions.ValidationException;
 import br.edu.barriga.service.external.ContaEvent;
 import br.edu.barriga.service.repository.ContaRepository;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.Arrays;
 import java.util.Collections;
 
 import static br.edu.barriga.domain.builders.ContaBuilder.umaConta;

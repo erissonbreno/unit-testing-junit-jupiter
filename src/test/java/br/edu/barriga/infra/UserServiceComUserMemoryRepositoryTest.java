@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class UserServiceComUserMemoryRepositoryTest {
 
-    private static UsuarioService service = new UsuarioService(new UsuarioMemoryRepository());
+    private static final UsuarioService service = new UsuarioService(new UsuarioMemoryRepository());
 
     @Test
     @Order(1)

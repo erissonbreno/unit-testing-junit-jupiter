@@ -1,7 +1,6 @@
 package br.edu.barriga.infra;
 
 import br.edu.barriga.domain.Usuario;
-import br.edu.barriga.domain.builders.UsuarioBuilder;
 import br.edu.barriga.service.repository.UsuarioRepository;
 
 import java.util.Optional;

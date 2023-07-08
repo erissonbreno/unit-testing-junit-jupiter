@@ -1,29 +1,23 @@
 package br.edu.barriga.domain.builders;
 
 import br.edu.barriga.domain.Conta;
-import br.edu.barriga.domain.Usuario;
-
-import static java.lang.String.format;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 import java.lang.reflect.ParameterizedType;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
+
+import static java.lang.String.format;
 
 /**
  * Classe responsável pela criação de builders de entidades
  *
  * @author wcaquino@gmail.com
- *
  */
 public class BuilderMaster {
 
-    Set<String> listaImports = new HashSet<String>();
+    Set<String> listaImports = new HashSet<>();
 
     @SuppressWarnings("rawtypes")
     public void gerarCodigoClasse(Class classe) {
@@ -75,7 +69,7 @@ public class BuilderMaster {
         builder.append(format("\t\treturn new %s(", classe.getSimpleName()));
         boolean first = true;
         for (Field campo : declaredFields) {
-            if(first) {
+            if (first) {
                 first = false;
             } else {
                 builder.append(", ");
@@ -87,11 +81,11 @@ public class BuilderMaster {
         builder.append("}");
 
         for (String str : listaImports) {
-            if(!str.contains("java.lang."))
+            if (!str.contains("java.lang."))
                 System.out.println(str);
         }
-        System.out.println(format("import %s;\n", classe.getCanonicalName()));
-        System.out.println(builder.toString());
+        System.out.printf("import %s;\n%n", classe.getCanonicalName());
+        System.out.println(builder);
     }
 
     @SuppressWarnings("rawtypes")
@@ -102,8 +96,7 @@ public class BuilderMaster {
 
     @SuppressWarnings("rawtypes")
     public List<Field> getClassFields(Class classe) {
-        List<Field> fields = new ArrayList<Field>();
-        fields.addAll(Arrays.asList(classe.getDeclaredFields()));
+        List<Field> fields = new ArrayList<>(Arrays.asList(classe.getDeclaredFields()));
         Class superClass = classe.getSuperclass();
         if (superClass != Object.class) {
             List<Field> fieldsSC = Arrays.asList(superClass.getDeclaredFields());

@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public class UsuarioMemoryRepository implements UsuarioRepository {
 
-    private List<Usuario> users;
+    private final List<Usuario> users;
     private Long currentId;
 
     public UsuarioMemoryRepository() {

@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CalculadoraTest {
 
-    private Calculadora calculadora = new Calculadora();
+    private final Calculadora calculadora = new Calculadora();
 
     @Test
     public void testSomar() {

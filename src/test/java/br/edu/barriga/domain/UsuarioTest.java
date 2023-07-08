@@ -27,25 +27,22 @@ public class UsuarioTest {
 
     @Test
     public void deveRejeitarUsarioSemNome() {
-        ValidationException validationException = assertThrows(ValidationException.class, () -> {
-            umUsuario().comNome(null).agora();
-        });
+        ValidationException validationException = assertThrows(ValidationException.class, () ->
+                umUsuario().comNome(null).agora());
         assertEquals("Nome e obrigatorio", validationException.getMessage());
     }
 
     @Test
     public void deveRejeitarUsarioSemEmail() {
-        ValidationException validationException = assertThrows(ValidationException.class, () -> {
-            umUsuario().comEmail(null).agora();
-        });
+        ValidationException validationException = assertThrows(ValidationException.class, () ->
+                umUsuario().comEmail(null).agora());
         assertEquals("Email e obrigatorio", validationException.getMessage());
     }
 
     @Test
     public void deveRejeitarUsarioSemSenha() {
-        ValidationException validationException = assertThrows(ValidationException.class, () -> {
-            umUsuario().comSenha(null).agora();
-        });
+        ValidationException validationException = assertThrows(ValidationException.class, () ->
+                umUsuario().comSenha(null).agora());
         assertEquals("Senha e obrigatoria", validationException.getMessage());
     }
 
@@ -60,18 +57,16 @@ public class UsuarioTest {
     @ParameterizedTest()
     @MethodSource("usuarioData")
     public void deveRejeitarUsuario(String nome, String email, String senha, String message) {
-        ValidationException validationException = assertThrows(ValidationException.class, () -> {
-            umUsuario().comNome(nome).comEmail(email).comSenha(senha).agora();
-        });
+        ValidationException validationException = assertThrows(ValidationException.class, () ->
+                umUsuario().comNome(nome).comEmail(email).comSenha(senha).agora());
         assertEquals(message, validationException.getMessage());
     }
 
     @ParameterizedTest()
     @CsvFileSource(files = "src/test/resources/CamposObrigatoriosUsuario.csv", nullValues = "null", useHeadersInDisplayName = true)
     public void deveRejeitarUsuarioUsandoCsv(String nome, String email, String senha, String message) {
-        ValidationException validationException = assertThrows(ValidationException.class, () -> {
-            umUsuario().comNome(nome).comEmail(email).comSenha(senha).agora();
-        });
+        ValidationException validationException = assertThrows(ValidationException.class,
+                umUsuario().comNome(nome).comEmail(email).comSenha(senha)::agora);
         assertEquals(message, validationException.getMessage());
     }
 }

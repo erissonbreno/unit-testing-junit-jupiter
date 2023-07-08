@@ -3,7 +3,7 @@ package br.edu.barriga.service.external;
 import br.edu.barriga.domain.Conta;
 
 public interface ContaEvent {
-    public enum EventType {
+    enum EventType {
         CREATED,
         UPDATED,
         DELETED

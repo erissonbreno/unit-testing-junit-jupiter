@@ -6,9 +6,9 @@ import java.util.Objects;
 
 public class Conta {
 
-    private Long id;
-    private String nome;
-    private Usuario usuario;
+    private final Long id;
+    private final String nome;
+    private final Usuario usuario;
 
     public Conta(Long id, String nome, Usuario usuario) {
         if(nome == null) throw new ValidationException("Nome e obrigatorio");

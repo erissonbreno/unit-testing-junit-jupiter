@@ -1,18 +1,13 @@
 package br.edu.barriga.service;
 
 import br.edu.barriga.domain.Usuario;
-import br.edu.barriga.domain.builders.UsuarioBuilder;
 import br.edu.barriga.domain.exceptions.ValidationException;
 import br.edu.barriga.infra.UsuarioDummyRepository;
 import br.edu.barriga.service.repository.UsuarioRepository;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-import org.mockito.Mockito;
-import org.mockito.MockitoAnnotations;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Optional;

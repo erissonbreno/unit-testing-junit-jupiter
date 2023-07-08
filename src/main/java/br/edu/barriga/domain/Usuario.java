@@ -6,10 +6,10 @@ import java.util.Objects;
 
 public class Usuario {
 
-    private Long id;
-    private String nome;
-    private String email;
-    private String senha;
+    private final Long id;
+    private final String nome;
+    private final String email;
+    private final String senha;
 
     public Usuario(Long id, String nome, String email, String senha) {
         if (nome == null) throw new ValidationException("Nome e obrigatorio");
